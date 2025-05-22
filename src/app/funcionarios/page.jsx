@@ -54,8 +54,9 @@ export default function Funcionarios() {
                 }
             );
             setModalInfo((m) => ({ ...m, departamento, loading: false }));
+            toast.success("Departamentos encontrados!");
         } catch {
-            toast.succes("Departamentos não encontrados!");
+            toast.error("Departamentos não encontrados!");
             setModalInfo((m) => ({ ...m, loading: false }));
         }
     };
@@ -66,7 +67,7 @@ export default function Funcionarios() {
     };
 
     return (
-        <div>
+        <div className={styles.container}>
             <h1>Lista de Funcionários e Departamentos</h1>
 
             <Pagination
@@ -142,6 +143,10 @@ export default function Funcionarios() {
                             <span className={styles.label}>Departamento:</span>{" "}
                             {modalInfo.departamento.name}
                         </p>
+
+                        <p>
+                            <span className={styles.label}>Departamento ID:</span>{" "}
+                            {modalInfo.departamento.id}</p>
                     </div>
                 ) : (
                     <p style={{ textAlign: "center" }}>Informações do departamento não encontradas.</p>

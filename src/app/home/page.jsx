@@ -34,7 +34,7 @@ export default function Home() {
         <div className={styles.container}>
             <div className={styles.foto}>
                 <Image 
-                    src="/image/imagemTeste.jpg" 
+                    src="/image/kevinPerfil.jpg" 
                     alt="foto do kevin de perfilll" 
                     layout="responsive" 
                     width={30} 

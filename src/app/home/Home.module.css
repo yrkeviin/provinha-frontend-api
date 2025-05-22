@@ -16,12 +16,8 @@
 }
 
 .foto {
-    width: 50%;
+    width: 40%;
     transition: .3s ease-in-out;
-}
-
-.foto {
-    border-radius: 0px;
 }
 
 .info {
