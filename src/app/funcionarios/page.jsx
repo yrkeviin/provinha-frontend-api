@@ -54,9 +54,9 @@ export default function Funcionarios() {
                 }
             );
             setModalInfo((m) => ({ ...m, departamento, loading: false }));
-            toast.success("Departamentos encontrados!");
+            toast.success("Departamento encontrado!");
         } catch {
-            toast.error("Departamentos não encontrados!");
+            toast.error("Departamento não encontrado!");
             setModalInfo((m) => ({ ...m, loading: false }));
         }
     };
@@ -88,6 +88,7 @@ export default function Funcionarios() {
                     width={300}
                     height={200}
                     alt="Loading"
+                    className={styles.loadingImage}
                 />
             ) : (
                 <div className={styles.cardsContainer}>
