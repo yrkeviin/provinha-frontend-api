@@ -35,7 +35,7 @@ export default function Funcionarios() {
                 );
                 setData({ funcionarios, loading: false, current: 1, pageSize: 5 });
             } catch {
-                toast.error("Erro ao carregar FUNCIONARIOS!");
+                toast.error("Erro ao carregar Funcionários!");
                 setData((d) => ({ ...d, loading: false }));
             }
         };
@@ -45,27 +45,17 @@ export default function Funcionarios() {
 
     const openModal = async (funcionario) => {
         setModalInfo({ visible: true, funcionario, departamento: null, loading: true });
-    
-        const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-        if (!apiUrl) {
-            console.error("A variável NEXT_PUBLIC_API_URL não está configurada.");
-            toast.error("Erro na configuração da URL da API.");
-            setModalInfo((m) => ({ ...m, loading: false }));
-            return;
-        }
-    
+
         try {
             const { data: departamento } = await axios.get(
-                `${apiUrl}/departamento/${funcionario.id}`,
+                `${process.env.NEXT_PUBLIC_API_URL}/departamentos/${funcionario.id}`,
                 {
                     headers: HEADERS,
                 }
             );
-            console.log("Departamento recebido:", departamento);
             setModalInfo((m) => ({ ...m, departamento, loading: false }));
-        } catch (error) {
-            console.error("Erro ao buscar departamento:", error);
-            toast.error("Erro ao carregar informações.");
+        } catch {
+            toast.succes("Departamentos não encontrados!");
             setModalInfo((m) => ({ ...m, loading: false }));
         }
     };
@@ -107,11 +97,11 @@ export default function Funcionarios() {
                             onClick={() => openModal(funcionario)}
                             cover={
                                 <Image
-                                alt={funcionario.name}
-                                src={funcionario.photo ? funcionario.photo : "/image/220.svg"}
-                                width={220}
-                                height={220}
-                                />
+                                    alt={funcionario.name}
+                                    src={funcionario.photo ? funcionario.photo : "/image/220.svg"}
+                                    width={220}
+                                    height={220}
+                                    />
                             }
                         >
                             <Card.Meta
@@ -150,7 +140,7 @@ export default function Funcionarios() {
                     <div className={styles.departamentoInfo}>
                         <p>
                             <span className={styles.label}>Departamento:</span>{" "}
-                            {modalInfo.departamento?.name || "Não informado"}
+                            {modalInfo.departamento.name}
                         </p>
                     </div>
                 ) : (
