@@ -21,7 +21,7 @@ export default function Home() {
         return (
             <div className={styles.loadingContainer}>
                 <Image 
-                    src="/icon/favicon.ico"
+                    src="/image/loading.gif"
                     alt="Carregando..."
                     width={100}
                     height={100}

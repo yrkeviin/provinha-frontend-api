@@ -3,6 +3,17 @@
     height: 100vh;
 }
 
+.container h1 {
+    text-align: center;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
 .cardsContainer {
     display: flex;
     flex-wrap: wrap;

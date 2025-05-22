@@ -79,11 +79,12 @@ export default function Funcionarios() {
                 }
                 showSizeChanger
                 pageSizeOptions={["5", "10", "100"]}
+                className={styles.pagination}
             />
 
             {data.loading ? (
                 <Image
-                    src="/images/loading.gif"
+                    src="/image/loading.gif"
                     width={300}
                     height={200}
                     alt="Loading"
@@ -102,7 +103,7 @@ export default function Funcionarios() {
                                     src={funcionario.photo ? funcionario.photo : "/image/220.svg"}
                                     width={220}
                                     height={220}
-                                    />
+                                />
                             }
                         >
                             <Card.Meta
