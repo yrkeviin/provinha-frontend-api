@@ -1,0 +1,25 @@
+.button {
+    width: 60%;
+    height: 38px;
+    border: none;
+    border-radius: 10px;
+    background-color: #c2deff;
+    color: rgb(76, 76, 76);
+    transition: .3s ease-in-out;
+}
+
+.button:hover {
+    width: 40%;
+    transition: .3s ease-in-out;
+    cursor: pointer;
+    border-radius: 15px;
+    background-color: #5176a0;
+    color: white;
+}
+
+@media screen and (max-width: 1200px) {
+    .button {
+        font-size: .6rem;
+        padding: 4px;
+    }
+}

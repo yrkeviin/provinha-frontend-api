@@ -1,0 +1,94 @@
+.container {
+    display: flex;
+    height: 100vh;
+    margin: .2% 10%;
+    justify-content: center;
+    gap: 5%;
+    align-items: center;
+}
+
+.loadingContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: transparent;
+}
+
+.foto {
+    width: 50%;
+    transition: .3s ease-in-out;
+}
+
+.foto {
+    border-radius: 0px;
+}
+
+.info {
+    width: 50%;
+    transition: .3s ease-in-out;
+    background: linear-gradient(100deg, #89c0ff, #304762);
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.info h1 {
+    font-size: 1.8rem;
+    margin-bottom: 5%;
+}
+
+.info h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1%;
+}
+
+.info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1%;
+    color: white;
+}
+
+.info h4 {
+    font-size: 1rem;
+    margin-bottom: 5%;
+    color: rgb(173, 0, 0);
+}
+
+.info p {
+    font-size: 1rem;
+    margin-bottom: 5%;
+}
+
+@media screen and (max-width: 1200px) {
+    .foto {
+        width: 100%;
+        height: 50vh;
+    }
+
+    .info h1 {
+        font-size: 1rem;
+        margin-bottom: 9%;
+    }
+    
+    .info h2 {
+        font-size: .9rem;
+        margin-bottom: 2%;
+    }
+    
+    .info h3 {
+        font-size: .8rem;
+        margin-bottom: 2%;
+        color: white;
+    }
+
+    .info h4 {
+        font-size: .7rem;
+        margin-bottom: 5%;
+    }
+
+    .info p {
+        font-size: .7rem;
+        margin-bottom: 5%;
+    }
+}
+
